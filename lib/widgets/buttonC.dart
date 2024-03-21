@@ -4,14 +4,21 @@ import 'package:flutter/material.dart';
 
 class ButtonC extends StatelessWidget {
   final String text;
+  final ontap;
   final Color? backgroundColor;
   final Color? textcolor;
-  const ButtonC(
-      {super.key, required this.text, this.backgroundColor, this.textcolor});
+  const ButtonC({
+    super.key,
+    required this.text,
+    this.backgroundColor,
+    this.textcolor,
+    this.ontap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return InkWell(
+      onTap: ontap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
         decoration: BoxDecoration(
